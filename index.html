@@ -2,16 +2,19 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Industrial Revolution Marketplace, 1830–1930</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15/dist/twemoji.min.js"></script>
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#eadcb9;--card:#fbf3df;--ink:#2a1d12;--mut:#7a6650;--line:#c9b27c;--brass:#a8741a;--red:#7a1f1f;--grn:#2f5d3a;--up:#1f7a3d;--dn:#a8261e;--chip:#eadbb5;--hd:#2b1b14}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17120e;--card:#241c15;--ink:#f1e6d0;--mut:#a89a82;--line:#5a4628;--brass:#d9a441;--red:#c55;--grn:#6fbf86;--up:#6fd69a;--dn:#ff8f85;--chip:#33291d;--hd:#0f0b08}}
-:root[data-theme="dark"]{--bg:#17120e;--card:#241c15;--ink:#f1e6d0;--mut:#a89a82;--line:#5a4628;--brass:#d9a441;--red:#c55;--grn:#6fbf86;--up:#6fd69a;--dn:#ff8f85;--chip:#33291d;--hd:#0f0b08}
-html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}*{box-sizing:border-box}
-body{margin:0;min-height:100%;color:var(--ink);background:radial-gradient(circle at 50% 0,rgba(255,255,255,.18),transparent 60%),var(--bg);font:15px/1.4 Georgia,'Palatino Linotype',serif}
+:root{--bg:#eadcb9;--card:#fbf3df;--ink:#2a1d12;--mut:#7a6650;--line:#c9b27c;--brass:#a8741a;--red:#7a1f1f;--up:#1f7a3d;--dn:#b3261e;--chip:#eadbb5;--hd:#2b1b14}
+@media (prefers-color-scheme:dark){:root{--bg:#17120e;--card:#241c15;--ink:#f1e6d0;--mut:#a89a82;--line:#5a4628;--brass:#d9a441;--red:#d86a6a;--up:#6fd69a;--dn:#ff8f85;--chip:#33291d;--hd:#0f0b08}}
+*{box-sizing:border-box}html{height:100%}
+body{margin:0;min-height:100%;color:var(--ink);background:radial-gradient(circle at 50% 0,rgba(255,255,255,.18),transparent 60%),var(--bg);font:15px/1.4 Georgia,'Palatino Linotype',"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",serif}
+img.emoji{height:1.1em;width:1.1em;vertical-align:-.15em;margin:0 .05em}
 h1,h2,h3{margin:0;font-variant:small-caps;letter-spacing:.04em}
 .top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:10px 16px;background:var(--hd);color:#f3e3bb;border-bottom:4px double var(--brass)}
 .top h1{font-size:20px;color:#e8c46a}.top small{color:#c9b48a}
-.yr{font-size:26px;color:#e8c46a;font-weight:700}
+.dt{font:700 24px "Courier New",Courier,monospace;letter-spacing:.14em;color:#e8c46a;border:2px solid #e8c46a;padding:0 8px;border-radius:3px}
+.mn{font:700 22px Georgia,serif;color:#e8c46a}
 button,select,input{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:4px;padding:6px 10px}
 button{cursor:pointer}button:hover:not(:disabled){border-color:var(--brass)}button:disabled{opacity:.45;cursor:default}
 .pri{background:linear-gradient(#c8913a,#9b6a17);color:#fff;border-color:#6d4a0e;font-weight:700}
@@ -19,40 +22,58 @@ button{cursor:pointer}button:hover:not(:disabled){border-color:var(--brass)}butt
 .card{background:var(--card);border:2px solid var(--brass);outline:1px solid var(--line);outline-offset:-6px;border-radius:6px;padding:14px;overflow-x:auto;box-shadow:0 2px 6px rgba(0,0,0,.2)}
 .card h2{font-size:18px;color:var(--red);border-bottom:1px solid var(--line);margin-bottom:8px;padding-bottom:4px}
 .wrap{padding:14px;max-width:1500px;margin:auto}
-.grid2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:14px}@media(max-width:1000px){.grid2{grid-template-columns:1fr}}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:10px}
+.grid2{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:14px}@media(max-width:1000px){.grid2{grid-template-columns:1fr}}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
 table{width:100%;border-collapse:collapse}th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);text-align:left;padding:3px 6px}
 td{padding:6px;border-top:1px solid var(--line);white-space:nowrap}
-.pr{font-weight:700;font-size:1.25em}.up{color:var(--up)}.dn{color:var(--dn)}
+.pr{font-weight:700;font-size:1.25em}
+.up,.pos{color:var(--up)!important}.dn,.neg{color:var(--dn)!important}
 .tag{display:inline-block;border-radius:10px;padding:1px 9px;font-size:12px;background:var(--chip)}
 .sh{background:var(--dn);color:#fff}.ov{background:#2f6fb5;color:#fff}.ok{background:var(--chip)}
-.Technology{background:#2f6fb5;color:#fff}.Society{background:#8a4fa0;color:#fff}.Nature{background:#4a8a3a;color:#fff}.War{background:var(--red);color:#fff}
+.Technology{background:#2f6fb5;color:#fff}.Society{background:#8a4fa0;color:#fff}.Nature{background:#4a8a3a;color:#fff}.War{background:#7a1f1f;color:#fff}.World{background:#17808a;color:#fff}
 .bar{width:80px;height:8px;background:var(--chip);border-radius:4px;position:relative;display:inline-block}.bar i{position:absolute;left:0;top:0;height:8px;border-radius:4px;background:var(--brass)}.bar b{position:absolute;top:-3px;width:2px;height:14px;background:var(--ink)}
 .tabs{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}.tabs .on{background:var(--brass);color:#fff;border-color:var(--brass)}
-.lg{display:inline-grid;place-items:center;flex:none}.lg>span{width:84%;height:84%;display:grid;place-items:center}.lg b{color:transparent;font-weight:400}
-.g{border:1px solid var(--line);border-radius:6px;padding:10px;background:var(--card)}.g .h{display:flex;gap:8px;align-items:center;font-weight:700}.g small{color:var(--mut)}
-.g.lock{opacity:.5}.big{font-size:30px}.ev{display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-top:1px solid var(--line)}.ev div{flex:1}.ev small{display:block;color:var(--mut)}
+.lg{display:inline-grid;place-items:center;flex:none;vertical-align:middle}.lg>span{width:84%;height:84%;display:grid;place-items:center;position:relative}
+.eb{font-weight:400;line-height:1}.eb::before{content:attr(data-e);color:transparent;text-shadow:0 0 0 var(--c)}
+.mk{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.g{border:1px solid var(--line);border-radius:6px;padding:10px;background:var(--card)}.g .h{display:flex;gap:8px;align-items:center;font-weight:700}.g small,.ev small{color:var(--mut)}
+.chd{width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:var(--chip);font:700 16px Georgia,serif;padding:10px 14px;border-radius:4px 4px 0 0;color:var(--ink)}.chd small{font-weight:400;color:var(--mut)}
+.rw{display:flex;justify-content:space-between;align-items:center;margin-top:4px}.big{font-size:30px}
+.ev{display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-top:1px solid var(--line)}.ev>div{flex:1}.ev small{display:block}
 .land{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:20px auto;max-width:900px}.land button{padding:26px 10px;font-size:20px;border:2px solid var(--brass)}
 .chip{display:inline-block;background:var(--chip);border-radius:10px;padding:1px 8px;margin:2px;font-size:13px}
 .emb{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}.emb button{font-size:22px;padding:4px}.sel{outline:3px solid var(--brass)}
 .cty{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}.cty button{text-align:left;font-size:13px}
 .end{position:fixed;inset:0;z-index:50;overflow:auto;background:var(--bg);padding:16px}
+.pops{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;padding:6px 12px;background:var(--chip);border-bottom:1px solid var(--line);font-size:14px}.pops b{font-family:"Courier New",monospace;font-size:17px;color:var(--red)}
+.stk{display:flex;height:14px;border:1px solid var(--line);border-radius:3px;overflow:hidden;flex:1}.stk i{display:block;height:100%}
+.sh2{display:flex;gap:8px;align-items:center;margin:5px 0}.sh2>span{width:150px;flex:none}.sh2>b{width:42px;text-align:right}
 .proj .pr{font-size:1.9em}.proj td{font-size:19px}
-</style></head><body><div id="app"></div>
+#pop{position:fixed;inset:0;z-index:100;display:none;background:rgba(0,0,0,.6);align-items:center;justify-content:center;padding:14px}#pop.on{display:flex}
+.paper{position:relative;max-width:580px;width:100%;background:#f3ead2 repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.025) 3px 4px);color:#1d1710;border:3px double #1d1710;padding:16px 22px 12px;box-shadow:0 12px 40px rgba(0,0,0,.7);font-family:'Times New Roman',Georgia,serif;animation:drop .4s}
+.paper .mast{font:700 36px 'Times New Roman',serif;text-align:center;letter-spacing:.05em;font-variant:small-caps}
+.paper .sub{display:flex;justify-content:space-between;border-top:3px double #1d1710;border-bottom:1px solid #1d1710;font-size:12px;padding:2px 0;margin:2px 0 8px;text-transform:uppercase;letter-spacing:.1em}
+.paper h2{font:700 30px 'Times New Roman',serif;text-align:center;color:#1d1710;text-transform:uppercase;line-height:1.05;margin:4px 0;font-variant:normal}
+.paper .cols{columns:2;column-gap:18px;text-align:justify;font-size:15px;margin-top:8px}
+.paper .x{position:absolute;right:6px;top:6px;background:none;border:2px solid #1d1710;color:#1d1710;font-weight:700;padding:0 8px}
+.paper .tm{height:4px;background:#1d1710;margin-top:10px;transform-origin:left;animation:shr 5s linear forwards}
+@keyframes shr{to{transform:scaleX(0)}}@keyframes drop{from{transform:translateY(-50px) rotate(-3deg);opacity:0}}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#2b1b14;color:#f3e3bb;padding:8px 16px;border-radius:20px;z-index:120;display:none;border:1px solid var(--brass)}
+</style></head><body><div id="app"></div><div id="pop" onclick="closePop()"></div><div id="toast"></div>
 <script>
 const R=(id,n,i,cat,p,u,c,o,inp,pop)=>({id,n,i,cat,p,u,c,o,inp,pop});
 const GL=[
-R('grain','Grain','🌾','farm',6,1830,60,10,{},80),R('cotton','Cotton','🌱','farm',8,1830,70,10,{},0),R('fish','Fish','🐟','farm',7,1830,60,10,{},30),R('wool','Wool','🐑','farm',8,1830,60,10,{},0),
-R('tobacco','Tobacco','🍂','farm',12,1830,80,8,{},25),R('dyes','Dyes','🎨','farm',15,1830,90,8,{},0),R('wood','Wood','🌲','farm',6,1830,50,12,{},5),
+R('grain','Grain','🌾','farm',6,1830,60,10,{},80),R('cotton','Cotton','🌱','farm',8,1830,70,10,{},25),R('fish','Fish','🐟','farm',7,1830,60,10,{},30),R('wool','Wool','🐑','farm',8,1830,60,10,{},30),
+R('tobacco','Tobacco','🍂','farm',12,1830,80,8,{},25),R('dyes','Dyes','🎨','farm',15,1830,90,8,{},8),R('wood','Wood','🌲','farm',6,1830,50,12,{},20),
 R('fruit','Fruits','🍎','farm',9,1840,70,9,{},30),R('tea','Tea','🍵','farm',14,1840,90,8,{},30),R('wine','Wine','🍷','farm',16,1840,100,8,{},20),
-R('coffee','Coffee','☕','farm',14,1850,90,8,{},25),R('silk','Silk','🐛','farm',22,1850,110,6,{},0),R('rubber','Rubber','🌳','farm',18,1870,130,8,{},0),
-R('coal','Coal','🪨','mine',8,1830,90,12,{},25),R('iron','Iron','🔩','mine',12,1830,100,10,{},5),R('sulfur','Sulfur','🌋','mine',15,1850,110,8,{},0),R('oil','Oil','🛢️','mine',20,1870,160,10,{},10),
-R('planks','Planks','🪵','fact',9,1830,70,10,{wood:8},15),R('fabric','Fabric','🧵','fact',14,1830,90,10,{cotton:6,wool:3},0),
-R('textiles','Textiles','👔','fact',20,1830,110,8,{fabric:6,dyes:1},60),R('furn','Furniture','🪑','fact',25,1830,120,6,{planks:6,fabric:1},25),
+R('coffee','Coffee','☕','farm',14,1850,90,8,{},25),R('silk','Silk','🐛','farm',22,1850,110,6,{},5),R('rubber','Rubber','🌳','farm',18,1870,130,8,{},5),
+R('coal','Coal','⚫','mine',8,1830,90,12,{},25),R('iron','Iron','🔩','mine',12,1830,100,10,{},10),R('sulfur','Sulfur','🌋','mine',15,1850,110,8,{},5),R('oil','Oil','🛢️','mine',20,1870,160,10,{},10),
+R('planks','Planks','📏','fact',9,1830,70,10,{wood:8},15),R('fabric','Fabric','👚','fact',14,1830,90,10,{cotton:6,wool:3},10),
+R('textiles','Textiles','👔','fact',20,1830,110,8,{fabric:6,dyes:1},60),R('furn','Furniture','💺','fact',25,1830,120,6,{planks:6,fabric:1},25),
 R('sail','Sailing Ships','⛵','fact',320,1830,350,1,{planks:12,fabric:6,iron:2},3),R('tools','Tools','🔨','fact',22,1830,130,6,{iron:4,wood:2},10),
-R('guns','Small Guns','🔫','fact',28,1830,160,5,{iron:3,planks:2},10),R('glass','Glass','🪟','fact',15,1840,120,8,{coal:3,wood:1},15),
+R('guns','Small Guns','🔫','fact',28,1830,160,5,{iron:3,planks:2},10),R('glass','Glass','🔍','fact',15,1840,120,8,{coal:3,wood:1},15),
 R('paper','Paper','📜','fact',12,1840,100,8,{wood:6},20),R('steel','Steel','🏗️','fact',22,1850,200,8,{iron:6,coal:3},5),
-R('cement','Cement','🧱','fact',10,1850,130,10,{coal:4},10),R('canned','Canned Goods','🥫','fact',12,1850,120,10,{fish:3,fruit:3,iron:1},25),
+R('cement','Cement','🏢','fact',10,1850,130,10,{coal:4},10),R('canned','Canned Goods','🥫','fact',12,1850,120,10,{fish:3,fruit:3,iron:1},25),
 R('ltex','Luxury Textiles','👘','fact',45,1850,200,5,{fabric:5,silk:2,dyes:1},10),R('telegraph','Telegraph','📡','fact',30,1850,250,4,{iron:3,glass:1},8),
 R('grocery','Groceries','🛒','fact',14,1860,110,10,{grain:5,canned:2,fruit:1},70),R('mtools','Machine Tools','⚙️','fact',55,1860,260,4,{steel:3,tools:2},4),
 R('explo','Explosives','💥','fact',24,1860,180,6,{sulfur:3,coal:2},5),R('strain','Steam Trains','🚂','fact',280,1860,500,1,{steel:5,mtools:1},3),
@@ -63,121 +84,232 @@ R('bulb','Lightbulbs','💡','fact',15,1890,200,8,{glass:2,iron:1},40),R('etrain
 R('car','Cars','🚗','fact',400,1905,1000,1,{steel:3,rubber:4,glass:1,mtools:1,oil:3},3),R('radio','Radios','📻','fact',50,1910,320,4,{glass:2,iron:2,rubber:1,bulb:2},8),
 R('tank','Tanks','🛡️','fact',480,1915,1200,1,{steel:6,oil:3,mtools:2},1.5),R('plane','Aeroplanes','✈️','fact',650,1920,1500,1,{steel:4,oil:4,rubber:2,mtools:2,fabric:6},1.5)];
 const GM={};GL.forEach(g=>GM[g.id]=g);
+'1830:grain,cotton,wool,fish,wood;1832:dyes;1834:coal;1836:fruit;1838:iron;1840:fabric;1842:planks;1844:textiles;1846:tea;1848:tobacco;1850:glass;1852:tools;1854:furn;1856:steel;1858:sail;1860:paper;1862:mtools;1864:canned;1866:strain;1868:sship;1870:sulfur;1872:cement;1874:guns;1876:silk;1878:ltex;1880:telegraph;1882:wine;1884:coffee;1886:rubber;1888:grocery;1890:phone;1892:explo;1894:lfurn;1896:ammo;1898:bulb;1900:services;1902:arty;1904:oil;1906:etrain;1908:car;1912:radio;1916:tank;1920:plane'.split(';').forEach(s=>{const[y,l]=s.split(':');l.split(',').forEach(i=>GM[i].u=+y)});
 const CITY=[['London',-.12,51.5,['services','ltex','paper']],['Manchester',-2.24,53.48,['textiles','fabric','cotton']],['Liverpool',-2.98,53.41,['sail','sship','tobacco']],['Birmingham',-1.9,52.48,['tools','guns','mtools']],['Leeds',-1.55,53.8,['wool','fabric','dyes']],['Sheffield',-1.47,53.38,['steel','iron','tools']],['Newcastle',-1.61,54.97,['coal','strain','glass']],['Bristol',-2.6,51.45,['tobacco','wine','plane']],['Glasgow',-4.25,55.86,['sship','iron','steel']],['Edinburgh',-3.19,55.95,['paper','wine','services']],['Cardiff',-3.18,51.48,['coal','iron','cement']],['Belfast',-5.93,54.6,['sail','textiles','sship']],['Aberdeen',-2.1,57.15,['fish','wood','oil']],['Hull',-.34,53.74,['fish','sail','grain']],['Plymouth',-4.14,50.37,['fish','sail','fruit']],['Southampton',-1.4,50.9,['sship','car','tea']],['Norwich',1.3,52.63,['wool','furn','grain']],['Dundee',-2.97,56.46,['paper','textiles','fish']],['Nottingham',-1.15,52.95,['ltex','bulb','tools']],['Swansea',-3.94,51.62,['coal','iron','sulfur']]].map(a=>({n:a[0],lo:a[1],la:a[2],b:a[3]}));
 const CM={};CITY.forEach(c=>CM[c.n]=c);
-const EV=[['Factory Acts','Society','Shorter hours: all output −8%',1844,1860,[['*','s',-8]]],['Railway Mania','Technology','Coal, iron & steel demand +30%',1840,1852,[['coal','d',30],['iron','d',30],['steel','d',30]]],['Irish Potato Famine','Nature','Grain output −35%',1845,1851,[['grain','s',-35]]],['Steam Plough','Technology','Grain output +25%',1850,1880,[['grain','s',25]]],['Great Exhibition','Society','Luxury textiles, glass & luxury furniture demand +40%',1851,1856,[['ltex','d',40],['glass','d',40],['lfurn','d',40]]],['Crimean War','War','Arms demand +60%',1854,1857,[['guns','d',60],['ammo','d',60],['arty','d',60]]],['Bessemer Process','Technology','Steel output +50%',1856,1900,[['steel','s',50]]],['Cotton Famine','Nature','American Civil War: cotton output −40%',1861,1866,[['cotton','s',-40]]],['Public Health Acts','Society','Population boom: all demand +15%',1870,1890,[['*','d',15]]],['Mass Literacy','Society','Paper & services demand +40%',1870,1900,[['paper','d',40],['services','d',40]]],['Long Depression','Society','All demand −20%',1873,1880,[['*','d',-20]]],['Electrification','Technology','Lightbulb, telephone & electric train demand +40%',1890,1912,[['bulb','d',40],['phone','d',40],['etrain','d',40]]],['Boer War','War','Arms & explosives demand +60%',1899,1903,[['ammo','d',60],['guns','d',60],['explo','d',60]]],['Assembly Line','Technology','Car output +40%',1908,1930,[['car','s',40]]],['Great War','War','Arms & steel demand up, grain output −25%',1914,1919,[['ammo','d',80],['arty','d',80],['tank','d',80],['steel','d',60],['grain','s',-25]]],['Spanish Flu','Society','All output −12%',1918,1921,[['*','s',-12]]],['Post-war Boom','Society','All demand +15%',1920,1929,[['*','d',15]]],['Wall Street Crash','Society','All demand −30%',1929,1931,[['*','d',-30]]]];
-const SHOCK=[['Strike Wave','Society','All output −15% for 6 years',[['*','s',-15]]],['Harvest Failure','Nature','Grain & fruit output −40% for 6 years',[['grain','s',-40],['fruit','s',-40]]],['Consumer Boom','Society','All demand +20% for 6 years',[['*','d',20]]],['Bank Panic','Society','All demand −25% for 6 years',[['*','d',-25]]],['Inventors’ Spark','Technology','All output +15% for 6 years',[['*','s',15]]]];
-const INF=[{id:'rail',n:'Railway',i:'🛤️',c:150,d:'+3% output on ALL your buildings'},{id:'port',n:'Port & Docks',i:'⚓',c:120,d:'+3% output on farms, fisheries & mines'}];
+// effects: s = output, d = home demand, g = global (export) demand
+const EV=[
+['Railway Mania','Technology','Coal, iron & steel demand +30%',1840,1852,[['coal','d',30],['iron','d',30],['steel','d',30]],'train'],
+['Factory Acts','Society','Shorter hours: all output −8%',1844,1860,[['*','s',-8]],'crowd'],
+['Irish Potato Famine','Nature','Grain output −35%',1845,1851,[['grain','s',-35]],'wheat'],
+['Revolutions of 1848','World','Unrest across Europe: world demand −15%',1848,1851,[['*','g',-15]],'crowd'],
+['California Gold Rush','World','Prospectors abroad buy tools, ships & canned goods (+40% world demand)',1849,1857,[['tools','g',40],['sail','g',40],['canned','g',40]],'coin'],
+['Steam Plough','Technology','Grain output +25%',1850,1880,[['grain','s',25]],'wheat'],
+['Great Exhibition','Society','Luxury textiles, glass & luxury furniture demand +40%',1851,1856,[['ltex','d',40],['glass','d',40],['lfurn','d',40]],'factory'],
+['Crimean War','War','War with Russia: arms demand up, and the army buys grain abroad',1853,1857,[['guns','d',60],['ammo','d',60],['arty','d',60],['grain','g',50],['guns','g',40]],'cannon'],
+['Bessemer Process','Technology','Cheap steel: steel output +50%',1856,1900,[['steel','s',50]],'factory'],
+['American Civil War','World','Cotton supply −40%; armies abroad buy arms (+50% world demand)',1861,1866,[['cotton','s',-40],['guns','g',50],['ammo','g',50]],'cannon'],
+['Suez Canal Opens','World','World trade surges: all world demand +10%, ships +40%',1869,1890,[['*','g',10],['sail','g',40],['sship','g',40]],'ship'],
+['Franco-Prussian War','War','Continental arms race: world arms demand +60%',1870,1872,[['guns','g',60],['ammo','g',60],['arty','g',60]],'cannon'],
+['Public Health Acts','Society','Population boom: home demand +15%',1870,1890,[['*','d',15]],'crowd'],
+['Mass Literacy','Society','Paper & services demand +40%',1870,1900,[['paper','d',40],['services','d',40]],'crowd'],
+['Long Depression','World','Slump at home and abroad: demand −20%, world demand −25%',1873,1880,[['*','d',-20],['*','g',-25]],'crowd'],
+['Scramble for Africa','World','Empire expands: world demand for textiles, guns & ammunition +30%',1880,1900,[['textiles','g',30],['guns','g',30],['ammo','g',30]],'globe'],
+['Electrification','Technology','Lightbulb, telephone & electric train demand +40%',1890,1912,[['bulb','d',40],['phone','d',40],['etrain','d',40]],'bulb'],
+['Boer War','War','Arms & explosives demand +60%',1899,1903,[['ammo','d',60],['guns','d',60],['explo','d',60]],'cannon'],
+['Russo-Japanese War','War','World arms demand +40%',1904,1906,[['guns','g',40],['ammo','g',40],['arty','g',40]],'cannon'],
+['Assembly Line','Technology','Car output +40%',1908,1930,[['car','s',40]],'factory'],
+['The Great War','War','Arms & steel demand soar, grain output −25%',1914,1919,[['ammo','d',80],['arty','d',80],['tank','d',80],['steel','d',60],['grain','s',-25],['ammo','g',100],['arty','g',100]],'cannon'],
+['Russian Revolution','World','Russian grain exports collapse: world grain demand +30%',1917,1922,[['grain','g',30]],'crowd'],
+['Spanish Flu','Society','All output −12%',1918,1921,[['*','s',-12]],'crowd'],
+['Roaring Twenties','World','Post-war boom: demand +15% at home, +20% abroad',1920,1929,[['*','d',15],['*','g',20]],'globe'],
+['Wall Street Crash','World','Global collapse: demand −30%, world demand −35%',1929,1931,[['*','d',-30],['*','g',-35]],'crowd']];
+const SHOCK=[['Strike Wave','Society','All output −15% for 6 years',[['*','s',-15]]],['Harvest Failure','Nature','Grain & fruit output −40% for 6 years',[['grain','s',-40],['fruit','s',-40]]],['Consumer Boom','Society','All demand +20% for 6 years',[['*','d',20]]],['Bank Panic','World','All demand −25% for 6 years',[['*','d',-25],['*','g',-25]]],['Inventors’ Spark','Technology','All output +15% for 6 years',[['*','s',15]]],['Border War','War','Arms demand +60% for 6 years',[['guns','d',60],['ammo','d',60],['arty','d',60]]]];
+const PIC={cannon:'<path d="M10 80h130"/><circle cx="55" cy="66" r="14"/><circle cx="55" cy="66" r="3" fill="#1d1710"/><path d="M45 56l60-26 6 13-55 27z" fill="#1d1710"/><circle cx="120" cy="24" r="7"/><circle cx="132" cy="14" r="10"/>',
+train:'<path d="M6 80h138"/><rect x="28" y="40" width="64" height="28"/><rect x="92" y="30" width="24" height="38"/><rect x="38" y="24" width="12" height="16" fill="#1d1710"/><circle cx="44" cy="72" r="8"/><circle cx="70" cy="72" r="8"/><circle cx="104" cy="72" r="8"/><circle cx="34" cy="14" r="6"/><circle cx="22" cy="8" r="4"/>',
+ship:'<path d="M20 62h110l-14 16H36z" fill="#1d1710"/><path d="M75 8v54M50 56V20l25 6zM100 56V24l-25 4z"/><path d="M4 84q10-6 20 0t20 0 20 0 20 0 20 0 20 0 20 0"/>',
+wheat:'<path d="M30 84V30M60 84V20M90 84V28M120 84V34"/><path d="M30 30c-8-6-8-14 0-18 8 4 8 12 0 18zM60 20c-8-6-8-14 0-18 8 4 8 12 0 18zM90 28c-8-6-8-14 0-18 8 4 8 12 0 18zM120 34c-8-6-8-14 0-18 8 4 8 12 0 18z" fill="#1d1710"/>',
+factory:'<path d="M10 80h130"/><rect x="14" y="44" width="50" height="36"/><rect x="70" y="30" width="60" height="50"/><rect x="24" y="14" width="10" height="30" fill="#1d1710"/><rect x="48" y="22" width="10" height="22" fill="#1d1710"/><circle cx="30" cy="8" r="6"/><circle cx="46" cy="14" r="5"/>',
+crowd:'<circle cx="30" cy="44" r="8"/><circle cx="60" cy="40" r="8"/><circle cx="92" cy="44" r="8"/><circle cx="122" cy="40" r="8"/><path d="M18 84V58q12-8 24 0v26M48 84V54q12-8 24 0v30M80 84V58q12-8 24 0v26M110 84V54q12-8 24 0v30"/><path d="M52 8h40v18H52z" fill="#1d1710"/>',
+globe:'<circle cx="75" cy="45" r="36"/><ellipse cx="75" cy="45" rx="16" ry="36"/><path d="M39 45h72M45 28h60M45 62h60"/>',
+bulb:'<path d="M75 8a24 24 0 0 0-12 44v10h24V52A24 24 0 0 0 75 8z"/><path d="M64 70h22M66 78h18M20 20l10 8M130 20l-10 8M12 46h14M124 46h14"/>',
+coin:'<circle cx="75" cy="45" r="34"/><circle cx="75" cy="45" r="26"/><text x="75" y="57" font-size="32" text-anchor="middle" font-family="Georgia" fill="#1d1710" stroke="none">£</text>'};
+const TPIC={War:'cannon',Nature:'wheat',Technology:'factory',Society:'crowd',World:'globe'};
+const INF=[{id:'port',n:'Port & Docks',i:'⚓',c:120,u:1836,d:'+3% output on your farms, fisheries & mines. Port owners also collect harbour dues from every company.'},{id:'rail',n:'Railway',i:'🛤️',c:150,u:1840,d:'+3% output on ALL your buildings.'}];
+const PORT_RATE=.08;
+const CH=[['tex','🧵','Textiles & Clothing','Cotton → Fabric → Textiles → Luxury',['cotton','wool','dyes','silk','fabric','textiles','ltex']],
+['food','🌾','Food & Provisions','Farm → Canned Goods → Groceries',['grain','fish','fruit','tea','coffee','wine','tobacco','canned','grocery']],
+['iron','⛏️','Coal, Iron & Steel','Coal + Iron → Steel → Machine Tools',['coal','iron','steel','cement','tools','mtools']],
+['wood','🌲','Timber, Paper & Services','Wood → Planks → Furniture · Paper → Services',['wood','planks','furn','lfurn','paper','services']],
+['trans','🚢','Transport & Shipping','Rubber & Oil + Steel → Ships, Trains, Cars, Planes',['rubber','oil','sail','sship','strain','etrain','car','plane']],
+['arms','⚔️','Arms & Munitions','Sulfur → Explosives → Guns, Artillery, Tanks',['sulfur','explo','guns','ammo','arty','tank']],
+['elec','💡','Glass & Electrics','Glass → Telegraph → Phones, Bulbs, Radios',['glass','telegraph','phone','bulb','radio']]];
+const CO={};
+function tcoll(k){CO[k]=!CO[k];render()}
+function collAll(v){CH.forEach(x=>CO[x[0]]=!!v);CO.inf=CO.soon=!!v;render()}
 const SH=['circle(50%)','polygon(50% 0,100% 18%,100% 62%,50% 100%,0 62%,0 18%)','polygon(50% 0,100% 50%,50% 100%,0 50%)','polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%)'];
-const EM=['🏭','⚙️','🚂','⚓','👑','🦁','🦅','🐉','🌹','🛡️','⚔️','🔱','🏰','🌟','🔔','🗝️','🦉','🐎','🌳','🪙','🧭','⛵','🔥','🎩'];
+const EM=['🏭','⚙️','🚂','⚓','👑','🦁','🦅','🐉','🌹','🛡️','⚔️','🔱','🏰','🌟','🔔','🗝️','🦉','🐎','🌳','💰','📍','⛵','🔥','🎩'];
+// Approximate census-based population (millions). UK incl. Ireland until 1921, then GB + N. Ireland.
+const UKP=[[1830,23.8],[1841,26.7],[1851,27.4],[1861,28.9],[1871,31.5],[1881,34.9],[1891,37.7],[1901,41.5],[1911,45.2],[1921,44.0],[1931,46.0]];
+const WP=[[1830,1100],[1850,1260],[1870,1400],[1890,1530],[1900,1650],[1910,1750],[1920,1860],[1930,2070],[1931,2075]];
+const lerp=(a,y)=>{for(let i=1;i<a.length;i++)if(y<=a[i][0]){const[x0,v0]=a[i-1],[x1,v1]=a[i];return v0+(v1-v0)*Math.max(0,(y-x0))/(x1-x0)}return a[a.length-1][1]};
+const gIdx=y=>lerp(WP,y)/1100*(1+(y-1830)/100*1.3),popMult=y=>lerp(UKP,y)/UKP[0][1],GS=.6;
 const UK='-5.7,50.1 -4.2,50.35 -3.4,50.6 -2.4,50.6 -1.2,50.75 .3,50.8 1.4,51.1 1.4,51.4 .9,51.5 1,51.8 1.7,52.5 1.7,52.7 .4,52.95 .1,53.4 -.1,53.6 .1,53.7 -.5,54.3 -1.1,54.55 -1.5,55 -1.6,55.6 -2.1,55.9 -3,56 -2.6,56.3 -2,56.7 -1.8,57.5 -2.9,57.7 -3.9,57.6 -3,58.6 -5,58.6 -5.2,58.2 -5.8,57.4 -5.6,56.6 -5.7,56 -5.2,55.7 -4.9,55.4 -5.1,54.8 -4.4,54.7 -3.6,54.9 -3.1,54.9 -3.4,54.2 -3,53.6 -3.2,53.3 -4.6,53.3 -4.6,52.9 -4.1,52.6 -4.1,52.3 -5.1,51.9 -4.2,51.6 -3,51.5 -3.2,51.3 -4.2,51.2 -5,50.6';
 const IE='-6,52.2 -6.3,53.3 -5.9,54 -5.5,54.5 -5.9,55.2 -6.5,55.2 -7.3,55.3 -8.3,55 -8.5,54.4 -9.9,54.2 -10.1,53.5 -9.5,53.1 -9.9,52.2 -10.3,51.8 -9.5,51.5 -8.4,51.8 -7,52.1 -6.3,52.2';
 const pj=(lo,la)=>[(lo+10.5)*26,(59-la)*44.4];
 const poly=s=>s.split(' ').map(p=>{const[a,b]=p.split(',');return pj(+a,+b).map(v=>v.toFixed(1)).join(',')}).join(' ');
 const SKY='<svg viewBox="0 0 600 70" preserveAspectRatio="xMidYMax slice" style="width:100%;height:60px;display:block"><g fill="#3d2a1d">'+[[10,30,26,40],[50,20,30,50],[95,34,22,36],[140,10,34,60],[190,28,28,42],[240,16,32,54],[290,32,24,38],[335,8,36,62],[385,26,28,44],[435,18,30,52],[485,30,26,40],[530,14,34,56],[570,32,24,38]].map(([x,y,w,h])=>`<rect x="${x}" y="${y+10}" width="${w}" height="${h}"/><rect x="${x+w/2-3}" y="${y-8}" width="6" height="22"/><circle cx="${x+w/2+6}" cy="${y-14}" r="6" fill="#8a7860" opacity=".6"/>`).join('')+'</g></svg>';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const $=s=>document.querySelector(s);const fm=n=>'£'+Math.round(n).toLocaleString('en-GB');
-function logo(l,s=48){const c=l||{s:0,e:0,c1:'#7a1f1f',c2:'#d9a441',c3:'#fbf3df'};return `<span class="lg" style="width:${s}px;height:${s}px;clip-path:${SH[c.s]};background:${c.c2}"><span style="clip-path:${SH[c.s]};background:${c.c1}"><b style="font-size:${s*.45}px;text-shadow:0 0 0 ${c.c3}">${EM[c.e]}</b></span></span>`}
-let db,G=null,TM={},loaded=false,role=null,me=null,tab='build',gtab='teams',wiz={name:'',s:1,e:0,c1:'#7a1f1f',c2:'#d9a441',c3:'#fbf3df',city:''},timer=null,raf=0,msg='';
+const $=s=>document.querySelector(s);
+const fm=n=>(n<0?'−':'')+'£'+Math.abs(Math.round(n)).toLocaleString('en-GB');
+const sg=n=>n>=0?'pos':'neg',sgn=n=>(n>=0?'+':'')+fm(n);
+let twOK=false;const TW='https://cdn.jsdelivr.net/gh/jdecked/twemoji@15/assets/svg/';
+const cp=e=>[...e].map(c=>c.codePointAt(0).toString(16)).filter(x=>x!=='fe0f').join('-');
+(()=>{const i=new Image();i.onload=()=>{twOK=true;rq()};i.src=TW+'1f3ed.svg'})();
+function logo(l,s=48){const c=l||{s:0,e:0,c1:'#7a1f1f',c2:'#d9a441',c3:'#fbf3df'},f=Math.round(s*.46),u=TW+cp(EM[c.e])+'.svg';
+ const inner=twOK?`<i class="mk" style="width:${f}px;height:${f}px;background:${c.c3};-webkit-mask:url(${u}) center/contain no-repeat;mask:url(${u}) center/contain no-repeat"></i>`:`<b class="eb" data-e="${EM[c.e]}" style="font-size:${f}px;--c:${c.c3}"></b>`;
+ return `<span class="lg" style="width:${s}px;height:${s}px;clip-path:${SH[c.s]};background:${c.c2}"><span style="clip-path:${SH[c.s]};background:${c.c1}">${inner}</span></span>`}
+let db,G=null,TM={},loaded=false,role=null,me=null,tab='build',gtab='teams',wiz={name:'',s:1,e:0,c1:'#7a1f1f',c2:'#d9a441',c3:'#fbf3df',city:''},timer=null,raf=0,msg='',err='',cf=0,tamt=100,tg='grain',seen=null,pq=[],popT=null,AC=null;
+const PIN={v:''};let pinOk=false;
 const START=600,cash=t=>START+(t.earned||0)-(t.spent||0);
-const popMult=y=>1+(y-1830)/100;
-function evs(){const y=G.year;return EV.filter(e=>y>=e[3]&&y<e[4]).map(e=>({n:e[0],t:e[1],d:e[2],e:e[5],end:e[4]})).concat((G.manual||[]).filter(m=>y<m.end))}
+function evs(){const y=G.year;return EV.filter(e=>y>=e[3]&&y<e[4]).map(e=>({n:e[0],t:e[1],d:e[2],e:e[5],end:e[4],p:e[6],k:e[0]+e[4]})).concat((G.manual||[]).filter(m=>y<m.end).map(m=>({...m,p:TPIC[m.t]||'globe',k:m.n+m.end})))}
 const evm=(E,id,k)=>{let m=1;E.forEach(v=>v.e.forEach(([g,kk,p])=>{if(kk===k&&(g==='*'||g===id))m*=1+p/100}));return m};
 const rail=t=>Math.min(10,(t.inf||{}).rail|0),port=t=>Math.min(10,(t.inf||{}).port|0);
 const boost=(t,g)=>1+.03*rail(t)+(g.cat!=='fact'?.03*port(t):0)+((CM[t.city]||{b:[]}).b.includes(g.id)?.1:0);
 const hist=id=>(G.prices&&G.prices[id])||[GM[id].p],pr=id=>{const h=hist(id);return h[h.length-1]};
-function calc(){const y=G.year,E=evs(),T=Object.values(TM),sc=Math.max(1,T.length/5),r={},U=GL.filter(g=>y>=g.u);
- U.forEach(g=>r[g.id]={F:0,s:0,ind:0,sm:evm(E,g.id,'s'),dm:evm(E,g.id,'d')});
- T.forEach(t=>U.forEach(g=>{const n=(t.b||{})[g.id]||0;if(n){r[g.id].F+=n;r[g.id].s+=n*g.o*boost(t,g)}}));
+function calc(){const y=G.year,E=evs(),T=Object.entries(TM),sc=Math.max(1,T.length/5),r={},U=GL.filter(g=>y>=g.u);
+ U.forEach(g=>r[g.id]={F:0,s:0,ind:0,by:{},sm:evm(E,g.id,'s'),dm:evm(E,g.id,'d'),gm:evm(E,g.id,'g')});
+ T.forEach(([id,t])=>U.forEach(g=>{const n=(t.b||{})[g.id]||0;if(n){const o=n*g.o*boost(t,g);r[g.id].F+=n;r[g.id].s+=o;r[g.id].by[id]=o}}));
  U.forEach(g=>{const k=r[g.id];for(const i in g.inp)if(r[i])r[i].ind+=k.F*g.inp[i]});
- U.forEach(g=>{const k=r[g.id],pop=g.pop*(g.id==='sail'?Math.max(.15,1-Math.max(0,y-1860)/50):1);k.sup=((g.pop>0?.85*pop:5)*sc+k.s)*k.sm;k.dem=pop*popMult(y)*sc*k.dm+k.ind;k.tg=g.p*Math.min(3.5,Math.max(.25,Math.pow(k.dem/Math.max(k.sup,1),.9)))});
+ U.forEach(g=>{const k=r[g.id],pop=g.pop*(g.id==='sail'?Math.max(.15,1-Math.max(0,y-1860)/50):1);k.art=(g.pop>0?.9*pop*(1+GS):5)*sc;k.sup=(k.art+k.s)*k.sm;k.dom=pop*popMult(y)*sc*k.dm;k.glob=pop*GS*gIdx(y)*sc*k.gm;k.dem=k.dom+k.glob+k.ind;k.tg=g.p*Math.min(3.5,Math.max(.25,Math.pow(k.dem/Math.max(k.sup,1),.9)))});
  return r}
 const prof=(g,t,c)=>{let p=pr(g.id)*g.o*boost(t,g)*c[g.id].sm;for(const i in g.inp)p-=pr(i)*g.inp[i];return p};
+function econ(c){const E={},T=Object.entries(TM);let tp=0;T.forEach(([id,t])=>{tp+=port(t);let gr=0;GL.forEach(g=>{const n=(t.b||{})[g.id]||0;if(n&&c[g.id])gr+=n*prof(g,t,c)});E[id]={gr,pay:0,rec:0}});
+ if(tp)T.forEach(([id])=>{const pay=Math.max(0,E[id].gr)*PORT_RATE;E[id].pay=pay;T.forEach(([rid,r])=>{E[rid].rec+=pay*port(r)/tp})});
+ T.forEach(([id])=>E[id].net=E[id].gr-E[id].pay+E[id].rec);E.tp=tp;return E}
+function flows(c,E){const L=[],T=Object.entries(TM);
+ T.forEach(([bid,B])=>GL.forEach(g=>{const n=(B.b||{})[g.id]||0;if(!n||!c[g.id])return;for(const i in g.inp){const k=c[i];if(!k)continue;const val=n*g.inp[i]*pr(i),tot=k.art+Object.values(k.by).reduce((a,b)=>a+b,0);
+  for(const aid in k.by)if(aid!==bid)L.push({f:bid,t:aid,a:val*k.by[aid]/tot,g:i,v:g.id,kind:'in'});L.push({f:bid,t:'art',a:val*k.art/tot,g:i,v:g.id,kind:'in'})}}));
+ if(E.tp)T.forEach(([s])=>T.forEach(([r,rt])=>{if(r!==s&&port(rt))L.push({f:s,t:r,a:E[s].pay*port(rt)/E.tp,kind:'dues'})}));return L}
 const cost=(g,n)=>Math.round(g.c*(1+.008*(G.year-1830)+.01*GL.filter(x=>G.year>=x.u).length)*Math.pow(1.12,n));
 const icost=(f,n)=>Math.round(f.c*(1+.008*(G.year-1830))*Math.pow(1.25,n));
+const canRef=(k,id,t)=>(t.bl||[]).some(e=>e[0]===k&&e[1]===id&&e[2]===G.year);
 const spark=h=>{const lo=Math.min(...h),hi=Math.max(...h);return `<svg width="80" height="24"><polyline fill="none" stroke="var(--brass)" stroke-width="2" points="${h.map((v,i)=>(i/Math.max(h.length-1,1)*80).toFixed(1)+','+(22-(hi===lo?10:(v-lo)/(hi-lo)*20)).toFixed(1)).join(' ')}"/></svg>`};
-function board(c,mine){const U=GL.filter(g=>G.year>=g.u);return '<table><tr><th>Good</th><th>Price</th><th>Change</th><th>Trend</th><th>Supply / Demand</th><th>Market</th>'+(mine?'<th>Your profit/yr</th>':'<th>Profit / factory</th>')+'</tr>'+U.map(g=>{const h=hist(g.id),p=h[h.length-1],pv=h.length>1?h[h.length-2]:p,d=p-pv,k=c[g.id],mx=Math.max(k.sup,k.dem)*1.1||1,r=k.dem/Math.max(k.sup,1);
+function board(c,mine){const U=GL.filter(g=>G.year>=g.u);return '<table><tr><th>Good</th><th>Price</th><th>Change</th><th>Trend</th><th>Supply / Demand</th><th>Abroad</th><th>Market</th>'+(mine?'<th>Your profit/yr</th>':'<th>Profit / factory</th>')+'</tr>'+U.map(g=>{const h=hist(g.id),p=h[h.length-1],pv=h.length>1?h[h.length-2]:p,d=p-pv,k=c[g.id],mx=Math.max(k.sup,k.dem)*1.1||1,r=k.dem/Math.max(k.sup,1);
  const pf=mine?prof(g,mine,c):prof(g,{inf:{},city:''},c);
- return `<tr><td><b>${g.i} ${g.n}</b></td><td class="pr">£${p.toFixed(2)}</td><td class="${d>=0?'up':'dn'}">${d>=0?'▲':'▼'} ${Math.abs(pv?d/pv*100:0).toFixed(1)}%</td><td>${spark(h)}</td><td><span class="bar"><i style="width:${k.sup/mx*100}%"></i><b style="left:${k.dem/mx*100}%"></b></span> <small>${k.sup.toFixed(0)}/${k.dem.toFixed(0)}</small></td><td><span class="tag ${r>1.15?'sh':r<.87?'ov':'ok'}">${r>1.15?'Shortage':r<.87?'Oversupply':'Balanced'}</span></td><td class="${pf>=0?'up':'dn'}"><b>${pf>=0?'+':''}${fm(pf)}</b></td></tr>`}).join('')+'</table><p style="font-size:12px;color:var(--mut);margin:6px 0 0">Brass bar = supply · black tick = demand.</p>'}
+ return `<tr><td><b>${g.i} ${g.n}</b></td><td class="pr">£${p.toFixed(2)}</td><td class="${d>=0?'up':'dn'}">${d>=0?'▲':'▼'} ${Math.abs(pv?d/pv*100:0).toFixed(1)}%</td><td>${spark(h)}</td><td><span class="bar"><i style="width:${k.sup/mx*100}%"></i><b style="left:${k.dem/mx*100}%"></b></span> <small>${k.sup.toFixed(0)}/${k.dem.toFixed(0)}</small></td><td>${k.dem?Math.round(k.glob/k.dem*100):0}%</td><td><span class="tag ${r>1.15?'sh':r<.87?'ov':'ok'}">${r>1.15?'Shortage':r<.87?'Oversupply':'Balanced'}</span></td><td class="${sg(pf)}"><b>${sgn(pf)}</b></td></tr>`}).join('')+'</table><p style="font-size:12px;color:var(--mut);margin:6px 0 0">Brass bar = supply · black tick = demand · “Abroad” = share of demand from the rest of the world.</p>'}
+const evTxt=e=>e.e.map(([g,k,p])=>`${g==='*'?'All goods':GM[g].n} ${k==='s'?'output':k==='d'?'home demand':'world demand'} ${p>0?'+':''}${p}%`).join(' · ');
 function evHTML(){const E=evs();return E.length?E.map(e=>`<div class="ev"><span class="tag ${e.t}">${e.t}</span><div><b>${esc(e.n)}</b><small>${esc(e.d)} · until ${e.end}</small></div></div>`).join(''):'<div style="color:var(--mut)">A quiet era — no major events.</div>'}
-function news(){const n=GL.filter(g=>g.u<=G.year&&g.u>G.year-6);return n.length?`<p>🔔 <b>New technology:</b> ${n.map(g=>g.i+' '+g.n).join(', ')}</p>`:''}
+function news(){const n=GL.filter(g=>g.u<=G.year&&g.u>G.year-6&&g.u>1830);return n.length?`<p>🔔 <b>New technology:</b> ${n.map(g=>g.i+' '+g.n+' ('+g.u+')').join(', ')}</p>`:''}
+const fmP=(n,w)=>w?(n/1000).toFixed(2)+' billion':n.toFixed(1)+' million';
+let dp={uk:0,wd:0},tw=null;
+function popBand(){const y=G.year;if(!dp.uk){dp.uk=lerp(UKP,y);dp.wd=lerp(WP,y)}return `<div class="pops"><span>👥 United Kingdom <b id="uk">${fmP(dp.uk)}</b></span><span>🌍 World <b id="wd">${fmP(dp.wd,1)}</b></span><span>🌐 World demand index <b>×${gIdx(y).toFixed(2)}</b></span></div>`}
+function tweenPop(){clearInterval(tw);const y=G.year,a=lerp(UKP,y),b=lerp(WP,y);tw=setInterval(()=>{dp.uk+=(a-dp.uk)*.12;dp.wd+=(b-dp.wd)*.12;const u=$('#uk'),w=$('#wd');if(u)u.textContent=fmP(dp.uk);if(w)w.textContent=fmP(dp.wd,1);if(Math.abs(a-dp.uk)<.003&&Math.abs(b-dp.wd)<.5)clearInterval(tw)},60)}
 function rank(){return Object.entries(TM).map(([id,t])=>({id,t,c:cash(t)})).sort((a,b)=>b.c-a.c)}
-function endScreen(){const R=rank(),by={};R.forEach((r,i)=>{(by[r.t.city]=by[r.t.city]||[]).push(i)});
- const pins=R.map((r,i)=>{const c=CM[r.t.city];if(!c)return'';const [x,y]=pj(c.lo,c.la),k=by[r.t.city].indexOf(i),l=r.t.l||{};return `<g><circle cx="${x+k*14}" cy="${y-k*10}" r="12" fill="${l.c1}" stroke="${l.c2}" stroke-width="3"/><text x="${x+k*14}" y="${y-k*10+5}" text-anchor="middle" font-size="13" font-weight="700" fill="${l.c3}">${i+1}</text></g>`}).join('');
- const lab=CITY.map(c=>{const [x,y]=pj(c.lo,c.la);return `<circle cx="${x}" cy="${y}" r="2" fill="var(--ink)"/><text x="${x+5}" y="${y+3}" font-size="8" fill="var(--mut)">${c.n}</text>`}).join('');
- return `<div class="end"><div style="text-align:center"><h1 style="font-size:34px;color:var(--red)">The Year is 1930</h1><p>The ledgers are closed. Here is how the companies of Britain fared. <button onclick="sw()">Back to menu</button></p></div><div class="wrap grid2" style="align-items:start"><div class="card"><h2>Final Ranking</h2>${R.map((r,i)=>`<div class="ev" style="align-items:center"><span class="big" style="width:44px">${['🥇','🥈','🥉'][i]||i+1}</span>${logo(r.t.l,52)}<div><b style="font-size:18px">${esc(r.t.name)}</b><small>${esc(r.t.city)}</small></div><b class="pr">${fm(r.c)}</b></div>`).join('')||'No companies.'}</div><div class="card"><h2>Seats of Industry</h2><svg viewBox="0 0 325 400" style="width:100%;max-height:75vh"><rect width="325" height="400" fill="var(--chip)" opacity=".5"/><polygon points="${poly(UK)}" fill="var(--card)" stroke="var(--brass)" stroke-width="2"/><polygon points="${poly(IE)}" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/>${lab}${pins}</svg></div></div></div>`}
-function head(t,ctl){return `<div class="top"><div><h1>⚙️ ${t}</h1><small>${role==='student'?'Company ledger':'The Industrial Revolution Marketplace'}</small></div><div class="ctl" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">${ctl||''}<span class="yr">${G?G.year:''}</span><button onclick="sw()">Switch role</button></div></div>`}
-function sw(){clearInterval(timer);timer=null;role=null;render()}
-function pick(r){role=r;try{me=localStorage.getItem('indmkt_me')}catch(e){}render()}
+const chips=t=>Object.entries(t.b||{}).filter(e=>e[1]&&GM[e[0]]).map(([i,n])=>`<span class="chip">${GM[i].i}×${n}</span>`).join('')+(rail(t)?`<span class="chip">🛤️×${rail(t)}</span>`:'')+(port(t)?`<span class="chip">⚓×${port(t)}</span>`:'')||'<small>Nothing built yet</small>';
+function mapSVG(Rk,me,rk){const by={};Rk.forEach((r,i)=>{(by[r.t.city]=by[r.t.city]||[]).push(i)});
+ const lab=CITY.map(c=>{const[x,y]=pj(c.lo,c.la);return `<circle cx="${x}" cy="${y}" r="2" fill="var(--mut)"/><text x="${x+4}" y="${y+3}" font-size="7" fill="var(--mut)">${c.n}</text>`}).join('');
+ const pins=Rk.map((r,i)=>{const c=CM[r.t.city];if(!c)return'';const[x0,y0]=pj(c.lo,c.la),k=by[r.t.city].indexOf(i),x=x0+k*17,y=y0-12-k*7,l=r.t.l||{};return `<g><circle cx="${x}" cy="${y}" r="${r.id===me?13:11}" fill="${l.c1}" stroke="${r.id===me?'#fff':l.c2}" stroke-width="3"/><text x="${x}" y="${y+4}" text-anchor="middle" font-size="11" font-weight="700" fill="${l.c3}">${rk?i+1:esc((r.t.name||'?')[0]).toUpperCase()}</text><text x="${x}" y="${y+22}" text-anchor="middle" font-size="7.5" font-weight="700" fill="var(--ink)">${esc(r.t.name.slice(0,16))}</text></g>`}).join('');
+ return `<svg viewBox="0 0 325 400" style="width:100%;max-height:78vh"><rect width="325" height="400" fill="var(--chip)" opacity=".5"/><polygon points="${poly(UK)}" fill="var(--card)" stroke="var(--brass)" stroke-width="2"/><polygon points="${poly(IE)}" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/>${lab}${pins}</svg>`}
+function endScreen(){const Rk=rank();return `<div class="end"><div style="text-align:center"><h1 style="font-size:34px;color:var(--red)">The Year is 1930</h1><p>The ledgers are closed. <button onclick="sw()">Back to menu</button></p></div><div class="wrap grid2" style="align-items:start"><div class="card"><h2>Final Ranking</h2>${Rk.map((r,i)=>`<div class="ev" style="align-items:center"><span class="big" style="width:44px">${['🥇','🥈','🥉'][i]||i+1}</span>${logo(r.t.l,52)}<div><b style="font-size:18px">${esc(r.t.name)}</b><small>${esc(r.t.city)}</small></div><b class="pr">${fm(r.c)}</b></div>`).join('')||'No companies.'}</div><div class="card"><h2>Seats of Industry</h2>${mapSVG(Rk,null,true)}</div></div></div>`}
+function head(t,ctl){return `<div class="top"><div><h1>⚙️ ${t}</h1><small>${role==='student'?'Company ledger':'The Industrial Revolution Marketplace'}</small></div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">${ctl||''}<span class="dt">${G?G.year:''}</span><button onclick="sw()">Switch role</button></div></div>`}
+function sw(){clearInterval(timer);timer=null;role=null;document.body.classList.remove('proj');render()}
+function audio(){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();AC.resume&&AC.resume()}catch(e){}}
+function pick(r){role=r;audio();try{me=localStorage.getItem('indmkt_me')}catch(e){}if(r==='teacher')pq=[];render()}
+function note(t){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(note.t);note.t=setTimeout(()=>e.style.display='none',3500)}
+function telegram(){try{audio();let t=AC.currentTime+.05;'.-.-..-.'.split('').forEach(ch=>{const d=ch==='.'?.07:.2,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.value=720;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.07,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+d+.02);t+=d+.08})}catch(e){}}
+function chkEv(){if(!G||G.status==='ended'){return}const E=evs();if(seen===null){seen=new Set(E.map(e=>e.k));return}E.forEach(e=>{if(!seen.has(e.k)){seen.add(e.k);pq.push(e)}});if(!popT&&pq.length&&(role==='student'||role==='proj'))showPop()}
+function showPop(){const e=pq.shift();if(!e)return;const p=$('#pop');
+ p.innerHTML=`<div class="paper" onclick="event.stopPropagation()"><button class="x" onclick="closePop()">✕</button><div class="mast">The Industrial Times</div><div class="sub"><span>⚡ Telegram</span><span>${G.year}</span><span>Price One Penny</span></div><h2>${esc(e.n)}</h2><svg viewBox="0 0 150 90" style="width:100%;height:150px;border-top:1px solid #1d1710;border-bottom:1px solid #1d1710;margin:6px 0"><g fill="none" stroke="#1d1710" stroke-width="2.5" stroke-linejoin="round">${PIC[e.p]||PIC.globe}</g></svg><div class="cols"><b>${esc(e.d)}.</b> Markets are expected to react immediately. ${esc(evTxt(e))}.</div><div class="tm"></div></div>`;
+ p.classList.add('on');telegram();clearTimeout(popT);popT=setTimeout(closePop,5000)}
+function closePop(){clearTimeout(popT);const p=$('#pop');p.classList.remove('on');p.innerHTML='';popT=null;if(pq.length)setTimeout(showPop,300)}
 function render(){raf=0;const A=$('#app');
  if(!role){A.innerHTML=`<div class="top"><h1>⚙️ Industrial Revolution Marketplace</h1><small>1830 – 1930</small></div>${SKY}<div class="wrap" style="text-align:center"><h1 style="font-size:32px;color:var(--red)">Build an Empire of Industry</h1><p style="color:var(--mut)">Choose your place in the Victorian economy.</p><div class="land"><button onclick="pick('student')"><div class="big">🎩</div>Student<br><small>Found a company</small></button><button onclick="pick('teacher')"><div class="big">🎓</div>Teacher<br><small>Run the economy</small></button><button onclick="pick('proj')"><div class="big">📽️</div>Projector<br><small>Live price board</small></button></div>${msg}</div>`;return}
  if(role==='teacher'&&!pinOk){A.innerHTML=head('Teacher')+`<div class="wrap">${eb()}<div class="card"><h2>Teacher PIN</h2><input id="pin" type="password" placeholder="PIN" onkeydown="if(event.key==='Enter')tpin()"> <button class="pri" onclick="tpin()">Enter</button></div></div>`;return}
  if(!loaded){A.innerHTML='<div class="wrap">Loading…</div>';return}
  if(role==='teacher')return rTeacher(A);
  if(!G){A.innerHTML=head(role==='proj'?'Price Board':'Waiting')+`<div class="wrap"><div class="card">⏳ The teacher has not opened a game yet.</div></div>`;return}
- if(G.status==='ended'){A.innerHTML=endScreen()+'';return}
+ if(G.status==='ended'){A.innerHTML=endScreen();return}
  if(role==='proj')return rProj(A);
  if(!TM[me])return rWiz(A);
  rStudent(A)}
-function rq(){if((role==='student'&&G&&!TM[me]||role==='teacher'&&!pinOk)&&document.activeElement&&document.activeElement.tagName==='INPUT')return;if(!raf)raf=requestAnimationFrame(render)}
-function rProj(A){const c=calc(),R=rank().slice(0,8);document.body.classList.add('proj');
- A.innerHTML=head('Live Price Board')+SKY+`<div class="wrap"><div class="card" style="margin-bottom:12px"><h2>Events of the Age</h2>${evHTML()}${news()}</div><div class="card">${board(c)}</div><div class="card" style="margin-top:12px;display:flex;gap:16px;flex-wrap:wrap">${R.map(r=>`<span style="display:flex;gap:6px;align-items:center">${logo(r.t.l,34)}<b>${esc(r.t.name)}</b> ${fm(r.c)}</span>`).join('')||'No companies yet'}</div></div>`}
+function rq(){const a=document.activeElement;if(a&&/INPUT|SELECT|TEXTAREA/.test(a.tagName))return;if(!raf)raf=requestAnimationFrame(render)}
+document.addEventListener('focusout',()=>setTimeout(rq,80));
+function rProj(A){const c=calc(),Rk=rank().slice(0,8);document.body.classList.add('proj');
+ A.innerHTML=head('Live Price Board')+SKY+popBand()+`<div class="wrap"><div class="card" style="margin-bottom:12px"><h2>Events of the Age</h2>${evHTML()}${news()}</div><div class="card">${board(c)}</div><div class="card" style="margin-top:12px;display:flex;gap:16px;flex-wrap:wrap">${Rk.map(r=>`<span style="display:flex;gap:6px;align-items:center">${logo(r.t.l,34)}<b>${esc(r.t.name)}</b> ${fm(r.c)}</span>`).join('')||'No companies yet'}</div></div>`;tweenPop()}
 function rWiz(A){document.body.classList.remove('proj');const w=wiz;
  A.innerHTML=head('Found Your Company')+`<div class="wrap">${eb()}<div class="grid2"><div class="card"><h2>1 · Name & Logo</h2><input id="wn" placeholder="Company name, e.g. Pemberton &amp; Sons" value="${esc(w.name)}" oninput="wiz.name=this.value;wp()" style="width:100%;margin-bottom:10px"><div style="display:flex;gap:6px;margin-bottom:8px">${SH.map((s,i)=>`<button class="${w.s===i?'sel':''}" onclick="wiz.s=${i};render()">${logo({s:i,e:w.e,c1:w.c1,c2:w.c2,c3:w.c3},34)}</button>`).join('')}</div><div class="emb">${EM.map((e,i)=>`<button class="${w.e===i?'sel':''}" onclick="wiz.e=${i};render()">${e}</button>`).join('')}</div><p>Colours: <label>Badge <input type="color" value="${w.c1}" onchange="wiz.c1=this.value;render()"></label> <label>Border <input type="color" value="${w.c2}" onchange="wiz.c2=this.value;render()"></label> <label>Emblem <input type="color" value="${w.c3}" onchange="wiz.c3=this.value;render()"></label></p><div style="text-align:center"><div id="pv">${logo(w,110)}<h2 style="border:0">${esc(w.name)||'Your Company'}</h2></div></div></div>
  <div class="card"><h2>2 · Choose Your City</h2><div class="cty">${CITY.map(c=>`<button class="${w.city===c.n?'sel':''}" onclick="wiz.city='${c.n}';render()"><b>${c.n}</b><br><small>+10%: ${c.b.map(i=>GM[i].i).join(' ')}</small></button>`).join('')}</div><p style="color:var(--mut);font-size:13px">Your city gives +10% output on the goods shown.</p><button class="pri" style="width:100%;padding:12px" ${w.name.trim()&&w.city?'':'disabled'} onclick="found()">Found the Company ▶</button></div></div></div>`}
 function wp(){const b=document.querySelector('button.pri');if(b)b.disabled=!(wiz.name.trim()&&wiz.city);const p=$('#pv h2');if(p)p.textContent=wiz.name||'Your Company'}
-async function found(){const id='t'+Math.random().toString(36).slice(2,8),w=wiz;try{await db.doc('teams/'+id).set({name:w.name.trim().slice(0,40),l:{s:w.s,e:w.e,c1:w.c1,c2:w.c2,c3:w.c3},city:w.city,spent:0,earned:0,b:{},inf:{rail:0,port:0},ts:Date.now()});me=id;try{localStorage.setItem('indmkt_me',id)}catch(e){}}catch(e){err='Could not create company: '+(e&&e.message||'permission denied')+'. Check your connection and try again.';render()}}
-async function buy(id,d,inf){const t=TM[me];if(!t||G.status==='ended')return;const b={...t.b},f={...(t.inf||{rail:0,port:0})};let sp=t.spent||0;
- if(inf){const o=INF.find(x=>x.id===id),n=f[id]||0;if(d>0){const c=icost(o,n);if(n>=10||cash(t)<c)return;sp+=c;f[id]=n+1}else{if(!n)return;sp-=Math.round(icost(o,n-1)*.5);f[id]=n-1}}
- else{const g=GM[id],n=b[id]||0;if(d>0){const c=cost(g,n);if(cash(t)<c)return;sp+=c;b[id]=n+1}else{if(!n)return;sp-=Math.round(cost(g,n-1)*.5);b[id]=n-1}}
- t.b=b;t.inf=f;t.spent=sp;render();try{await db.doc('teams/'+me).update({b,inf:f,spent:sp})}catch(e){}}
-function gcard(g,t,c){const n=(t.b||{})[g.id]||0,cs=cost(g,n),pf=prof(g,t,c),k=c[g.id];
- return `<div class="g"><div class="h"><span class="big">${g.i}</span><div>${g.n}<br><small>owned ${n} · £${pr(g.id).toFixed(2)}${CM[t.city]&&CM[t.city].b.includes(g.id)?' · city bonus':''}</small></div></div>
+const eb=()=>err?`<div class="card" style="margin-bottom:10px;color:var(--dn)"><b>${esc(err)}</b></div>`:'';
+async function found(){const id='t'+Math.random().toString(36).slice(2,8),w=wiz;try{await db.doc('teams/'+id).set({name:w.name.trim().slice(0,40),l:{s:w.s,e:w.e,c1:w.c1,c2:w.c2,c3:w.c3},city:w.city,spent:0,earned:0,b:{},inf:{rail:0,port:0},bl:[],ts:Date.now()});me=id;err='';try{localStorage.setItem('indmkt_me',id)}catch(e){}}catch(e){err='Could not create company: '+(e&&e.message||'error')+'. Check your connection and try again.';render()}}
+async function buy(id,d,inf){const t=TM[me];if(!t||G.status==='ended')return;const b={...t.b},f={...(t.inf||{rail:0,port:0})},bl=[...(t.bl||[])],k=inf?'i':'b';let sp=t.spent||0;const n=inf?(f[id]||0):(b[id]||0);
+ if(d>0){const c=inf?icost(INF.find(x=>x.id===id),n):cost(GM[id],n);if(cash(t)<c||(inf&&n>=10))return;sp+=c;if(inf)f[id]=n+1;else b[id]=n+1;bl.push([k,id,G.year,c]);if(bl.length>300)bl.shift()}
+ else{if(!n)return;if(inf)f[id]=n-1;else b[id]=n-1;const i=bl.map(x=>x[0]+x[1]).lastIndexOf(k+id);let rf=0;if(i>=0){const e=bl.splice(i,1)[0];if(e[2]===G.year){rf=e[3];sp-=rf}}note(rf?'↩ Refunded '+fm(rf)+' (built this year)':'Sold — no refund (built in an earlier year)')}
+ t.b=b;t.inf=f;t.spent=sp;t.bl=bl;render();try{await db.doc('teams/'+me).update({b,inf:f,spent:sp,bl})}catch(e){note('Could not save: '+e.message)}}
+function gcard(g,t,c){const n=(t.b||{})[g.id]||0,cs=cost(g,n),pf=prof(g,t,c);
+ return `<div class="g"><div class="h"><span class="big">${g.i}</span><div>${g.n}<br><small>owned ${n} · £${pr(g.id).toFixed(2)}${(CM[t.city]||{b:[]}).b.includes(g.id)?' · city bonus':''}</small></div></div>
  <div style="margin:6px 0;font-size:13px">${Object.keys(g.inp).length?'Needs: '+Object.entries(g.inp).map(([i,q])=>`<span class="chip" style="${c[i]&&c[i].dem>c[i].sup*1.15?'background:var(--dn);color:#fff':''}">${GM[i].i}×${q}</span>`).join(''):'<small>No inputs needed</small>'}</div>
- <div style="display:flex;justify-content:space-between;align-items:center"><b class="${pf>=0?'up':'dn'}">${pf>=0?'+':''}${fm(pf)}/yr</b><span><button onclick="buy('${g.id}',-1)" ${n?'':'disabled'}>−</button> <button class="pri" onclick="buy('${g.id}',1)" ${cash(t)>=cs?'':'disabled'}>Build ${fm(cs)}</button></span></div></div>`}
-function rStudent(A){document.body.classList.remove('proj');const t=TM[me],c=calc(),U=GL.filter(g=>G.year>=g.u),L=GL.filter(g=>G.year<g.u).slice(0,8);
- const sec=(l,cat)=>`<h2 style="margin:12px 0 6px;color:var(--red)">${l}</h2><div class="cards">${U.filter(g=>g.cat===cat).map(g=>gcard(g,t,c)).join('')}</div>`;
- let body='';
- if(tab==='build')body=sec('🌾 Farms & Plantations','farm')+sec('⛏️ Mines','mine')+sec('🏭 Factories & Workshops','fact')+`<h2 style="margin:12px 0 6px;color:var(--red)">🛤️ Infrastructure</h2><div class="cards">${INF.map(f=>{const n=(t.inf||{})[f.id]||0,cs=icost(f,n);return `<div class="g"><div class="h"><span class="big">${f.i}</span><div>${f.n}<br><small>built ${n}/10</small></div></div><p style="font-size:13px">${f.d}</p><div style="text-align:right"><button onclick="buy('${f.id}',-1,1)" ${n?'':'disabled'}>−</button> <button class="pri" onclick="buy('${f.id}',1,1)" ${n<10&&cash(t)>=cs?'':'disabled'}>Build ${fm(cs)}</button></div></div>`}).join('')}</div><h2 style="margin:12px 0 6px;color:var(--mut)">🔒 Coming Technologies</h2><div>${L.map(g=>`<span class="chip">${g.i} ${g.n} — ${g.u}</span>`).join('')}</div>`;
+ <div class="rw"><b class="${sg(pf)}">${sgn(pf)}/yr</b><span><button onclick="buy('${g.id}',-1)" ${n?'':'disabled'}>−</button> <button class="pri" onclick="buy('${g.id}',1)" ${cash(t)>=cs?'':'disabled'}>Build ${fm(cs)}</button></span></div>${n?`<small style="color:var(--mut)">${canRef('b',g.id,t)?'↩ Selling now = full refund':'Selling = no refund (built earlier)'}</small>`:''}</div>`}
+function shareHTML(c,mm){const rows=GL.filter(g=>c[g.id]&&c[g.id].F>0).map(g=>{const k=c[g.id],tot=k.art+Object.values(k.by).reduce((a,b)=>a+b,0);
+ const segs=Object.entries(k.by).sort((a,b)=>b[1]-a[1]).map(([id,v])=>{const t=TM[id],l=t.l||{};return `<i title="${esc(t.name)} ${(v/tot*100).toFixed(0)}%" style="width:${v/tot*100}%;background:${l.c1};border-right:2px solid ${l.c2}"></i>`}).join('');
+ return `<div class="sh2"><span>${g.i} ${g.n}</span><div class="stk">${segs}</div><b>${((k.by[mm]||0)/tot*100).toFixed(0)}%</b></div>`}).join('');
+ return (rows||'<small>No one has built anything yet.</small>')+'<p style="margin:8px 0 0;font-size:13px;color:var(--mut)">Coloured blocks = each company’s share of production; the grey remainder is home artisans &amp; imports. The number is your share.</p>'+`<div>${rank().map(r=>`<span class="chip">${logo(r.t.l,18)} ${esc(r.t.name)}</span>`).join('')}</div>`}
+function webSVG(mm,L){const ag={};L.forEach(x=>{if(x.t===mm||x.f===mm){const o=x.t===mm?x.f:x.t;ag[o]=ag[o]||{i:0,o:0};if(x.t===mm)ag[o].i+=x.a;else ag[o].o+=x.a}});
+ const ids=Object.keys(ag).filter(i=>ag[i].i+ag[i].o>.5).sort((a,b)=>(ag[b].i+ag[b].o)-(ag[a].i+ag[a].o)).slice(0,10);if(!ids.length)return '<small>No trade links yet — build something other companies need (or that you need) and the web appears.</small>';
+ const W=520,H=330,cx=W/2,cy=H/2,mx=Math.max(...ids.map(i=>Math.max(ag[i].i,ag[i].o)),1),me_=TM[mm].l||{};
+ let s=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:680px"><defs><marker id="ag" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#2e9e57"/></marker><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#d0453b"/></marker></defs>`;
+ const nodes=[];ids.forEach((id,i)=>{const a=-Math.PI/2+i/ids.length*2*Math.PI,x=cx+Math.cos(a)*205,y=cy+Math.sin(a)*118,t=id==='art'?{name:'Artisans & imports',l:{c1:'#777',c2:'#444',c3:'#fff'}}:TM[id],o=ag[id],dx=x-cx,dy=y-cy,len=Math.hypot(dx,dy),px=-dy/len*5,py=dx/len*5,l=t.l||{};
+  if(o.i>.5){s+=`<line x1="${x-dx/len*26+px}" y1="${y-dy/len*26+py}" x2="${cx+dx/len*34+px}" y2="${cy+dy/len*34+py}" stroke="#2e9e57" stroke-width="${1.5+o.i/mx*6}" marker-end="url(#ag)"/><text x="${(x+cx)/2+px*2.6}" y="${(y+cy)/2+py*2.6}" font-size="10" font-weight="700" fill="#2e9e57" text-anchor="middle">+${fm(o.i)}</text>`}
+  if(o.o>.5){s+=`<line x1="${cx+dx/len*34-px}" y1="${cy+dy/len*34-py}" x2="${x-dx/len*26-px}" y2="${y-dy/len*26-py}" stroke="#d0453b" stroke-width="${1.5+o.o/mx*6}" marker-end="url(#ar)"/><text x="${(x+cx)/2-px*2.6}" y="${(y+cy)/2-py*2.6}" font-size="10" font-weight="700" fill="#d0453b" text-anchor="middle">−${fm(o.o)}</text>`}
+  nodes.push(`<circle cx="${x}" cy="${y}" r="24" fill="${l.c1}" stroke="${l.c2}" stroke-width="3"/><text x="${x}" y="${y+6}" text-anchor="middle" font-size="18" font-weight="700" fill="${l.c3}">${esc((t.name||'?')[0]).toUpperCase()}</text><text x="${x}" y="${y+38}" text-anchor="middle" font-size="10" fill="var(--ink)">${esc(t.name.slice(0,18))}</text>`)});
+ return s+nodes.join('')+`<circle cx="${cx}" cy="${cy}" r="32" fill="${me_.c1}" stroke="${me_.c2}" stroke-width="4"/><text x="${cx}" y="${cy+5}" text-anchor="middle" font-size="13" font-weight="700" fill="${me_.c3}">YOU</text></svg><div style="font-size:12px"><span class="pos">▬ money coming to you</span> · <span class="neg">▬ money you pay out</span> (per year, estimated)</div>`}
+function webText(mm,L){const nm=id=>id==='art'?'Home artisans & imports':esc(TM[id].name),gp=(arr,key)=>{const o={};arr.forEach(x=>{const k=key(x);o[k]=o[k]||{a:0,x,v:new Set()};o[k].a+=x.a;if(x.v)o[k].v.add(x.v)});return Object.values(o).sort((a,b)=>b.a-a.a).filter(r=>r.a>.5).slice(0,8)};
+ const vs=s=>[...s].map(v=>GM[v].i+' '+GM[v].n).join(', ');
+ const ins=gp(L.filter(x=>x.t===mm&&x.kind==='in'),x=>x.f+x.g).map(r=>`<div class="ev"><div>Because you produce ${GM[r.x.g].i} <b>${GM[r.x.g].n}</b>, <b>${nm(r.x.f)}</b> (making ${vs(r.v)}) pays you <b class="pos">+${fm(r.a)}</b>/yr.</div></div>`).join('');
+ const outs=gp(L.filter(x=>x.f===mm&&x.kind==='in'),x=>x.t+x.g).map(r=>`<div class="ev"><div>Your ${vs(r.v)} need ${GM[r.x.g].i} <b>${GM[r.x.g].n}</b> — <b>${nm(r.x.t)}</b> earns <b class="neg">${fm(r.a)}</b>/yr from you.</div></div>`).join('');
+ const du=L.filter(x=>x.kind==='dues'&&(x.f===mm||x.t===mm)).map(x=>x.t===mm?`<div class="ev"><div>⚓ <b>${nm(x.f)}</b> pays you port dues: <b class="pos">+${fm(x.a)}</b>/yr.</div></div>`:`<div class="ev"><div>⚓ You pay port dues to <b>${nm(x.t)}</b>: <b class="neg">${fm(x.a)}</b>/yr.</div></div>`).join('');
+ return `<div class="grid2"><div class="card"><h2>Money flowing to you</h2>${ins||'<small>Nobody buys what you make yet.</small>'}</div><div class="card"><h2>Money flowing out</h2>${outs||'<small>You buy no inputs from others.</small>'}</div></div><div class="card" style="margin-top:10px"><h2>⚓ Harbour dues</h2>${du||'<small>No port dues between you and other companies yet.</small>'}</div>`}
+function rStudent(A){document.body.classList.remove('proj');const t=TM[me],c=calc(),E=econ(c),U=GL.filter(g=>G.year>=g.u),L=GL.filter(g=>G.year<g.u).slice(0,8),mine=E[me]||{gr:0,pay:0,rec:0,net:0},tp=E.tp,lc=t.lc;
+ const col=(k,ti,sub,inner)=>`<div class="card" style="margin-bottom:10px;padding:0"><button class="chd" onclick="tcoll('${k}')"><span>${CO[k]?'▶':'▼'}</span> ${ti} <small>${sub?'— '+sub:''}</small></button>${CO[k]?'':`<div style="padding:10px">${inner}</div>`}</div>`;
+ const chain=ch=>{const[k,ic,ti,sub,ids]=ch,us=ids.filter(i=>G.year>=GM[i].u);if(!us.length)return'';const own=us.reduce((a,i)=>a+((t.b||{})[i]||0),0),lk=ids.filter(i=>G.year<GM[i].u);return col(k,ic+' '+ti,sub+' · '+us.length+'/'+ids.length+' unlocked · owned '+own,`<div class="cards">${us.map(i=>gcard(GM[i],t,c)).join('')}</div>`+(lk.length?`<div style="margin-top:6px"><small>🔒 Coming: ${lk.map(i=>GM[i].i+' '+GM[i].n+' ('+GM[i].u+')').join(', ')}</small></div>`:''))};
+ const ctl2='<div style="margin-bottom:8px"><button onclick="collAll(1)">Collapse all</button> <button onclick="collAll(0)">Expand all</button></div>';
+ const infs=INF.filter(f=>G.year>=f.u);let body='';
+ if(tab==='build')body=ctl2+CH.map(chain).join('')+(infs.length?col('inf','🛤️ Infrastructure','Ports & railways',`<div class="cards">${infs.map(f=>{const n=(t.inf||{})[f.id]||0,cs=icost(f,n),ex=f.id==='port'?`<p style="font-size:13px">Every company pays <b>${PORT_RATE*100}%</b> of its profit as harbour dues, split between port owners by ports held. You hold <b>${port(t)}</b> of <b>${tp}</b> ports (${tp?Math.round(port(t)/tp*100):0}%).<br>Each year: you receive <b class="pos">+${fm(mine.rec)}</b>, you pay <b class="neg">−${fm(mine.pay)}</b>.</p>`:'';return `<div class="g"><div class="h"><span class="big">${f.i}</span><div>${f.n}<br><small>built ${n}/10</small></div></div><p style="font-size:13px;margin:4px 0">${f.d}</p>${ex}<div class="rw"><span></span><span><button onclick="buy('${f.id}',-1,1)" ${n?'':'disabled'}>−</button> <button class="pri" onclick="buy('${f.id}',1,1)" ${n<10&&cash(t)>=cs?'':'disabled'}>Build ${fm(cs)}</button></span></div>${n?`<small style="color:var(--mut)">${canRef('i',f.id,t)?'↩ Selling now = full refund':'Selling = no refund (built earlier)'}</small>`:''}</div>`}).join('')}</div>`):'')+col('soon','🔒 Coming Technologies','',`<div>${L.map(g=>`<span class="chip">${g.i} ${g.n} — ${g.u}</span>`).join('')}${INF.filter(f=>G.year<f.u).map(f=>`<span class="chip">${f.i} ${f.n} — ${f.u}</span>`).join('')}</div>`);
  else if(tab==='market')body=`<div class="card">${board(c,t)}</div>`;
- else body=`<div class="card"><h2>My Holdings</h2>${Object.entries(t.b||{}).filter(e=>e[1]).map(([i,n])=>`<span class="chip">${GM[i].i} ${GM[i].n} ×${n}</span>`).join('')||'<small>Nothing built yet.</small>'}<p>🛤️ Railways ${rail(t)} · ⚓ Ports ${port(t)}</p></div><div class="card" style="margin-top:10px"><h2>Company Standings</h2>${rank().map((r,i)=>`<div class="ev" style="align-items:center"><b>${i+1}</b>${logo(r.t.l,30)}<div>${esc(r.t.name)}${r.id===me?' (you)':''}</div><b>${fm(r.c)}</b></div>`).join('')}</div>`;
- A.innerHTML=head(esc(t.name),`<span>${logo(t.l,38)}</span><span>${esc(t.city)}</span><b class="yr">${fm(cash(t))}</b>`)+SKY+`<div class="wrap"><div class="card" style="margin-bottom:10px"><h2>Events of the Age</h2>${evHTML()}${news()}</div><div class="tabs">${[['build','🏗️ Build'],['market','📈 Market'],['me','📒 My Ledger']].map(([k,l])=>`<button class="${tab===k?'on':''}" onclick="tab='${k}';render()">${l}</button>`).join('')}</div>${body}</div>`}
+ else if(tab==='web')body=`<div class="card"><h2>Market Share</h2>${shareHTML(c,me)}</div><div class="card" style="margin:10px 0"><h2>Your Trade Web</h2>${webSVG(me,flows(c,E))}</div>${webText(me,flows(c,E))}`;
+ else if(tab==='map'){const Rk=rank();body=`<div class="grid2"><div class="card"><h2>Map of Britain</h2>${mapSVG(Rk,me)}</div><div class="card"><h2>Companies</h2>${Rk.map((r,i)=>`<div class="ev" style="align-items:flex-start;${r.id===me?'background:var(--chip)':''}">${logo(r.t.l,40)}<div><b>${esc(r.t.name)}</b>${r.id===me?' (you)':''}<small>${esc(r.t.city)}</small>${chips(r.t)}</div><b class="pr">${fm(r.c)}</b></div>`).join('')}</div></div>`}
+ else body=`<div class="grid2"><div class="card"><h2>Income per year (estimated)</h2><table><tr><td>Profit from your businesses</td><td class="${sg(mine.gr)}"><b>${sgn(mine.gr)}</b></td></tr><tr><td>⚓ Port dues paid</td><td class="neg"><b>${mine.pay?'−'+fm(mine.pay):fm(0)}</b></td></tr><tr><td>⚓ Port dues received</td><td class="pos"><b>+${fm(mine.rec)}</b></td></tr><tr><td><b>Net per year</b></td><td class="${sg(mine.net)}"><b>${sgn(mine.net)}</b></td></tr></table>${lc?`<p>Last turn (${lc.y}–${lc.y+2}): <b class="${sg(lc.n)}">${sgn(lc.n)}</b>${lc.top?` · top-up from your teacher <b class="pos">+${fm(lc.top)}</b>`:''}</p>`:''}</div><div class="card"><h2>My Holdings</h2>${chips(t)}</div></div><div class="card" style="margin-top:10px"><h2>Company Standings</h2>${rank().map((r,i)=>`<div class="ev" style="align-items:center"><b>${i+1}</b>${logo(r.t.l,30)}<div>${esc(r.t.name)}${r.id===me?' (you)':''}</div><b>${fm(r.c)}</b></div>`).join('')}</div>`;
+ A.innerHTML=head(esc(t.name),`<span>${logo(t.l,38)}</span><span>${esc(t.city)}</span><b class="mn">${fm(cash(t))}</b><b class="${sg(mine.net)}" title="Estimated net income per year">${sgn(mine.net)}/yr</b>`)+SKY+popBand()+`<div class="wrap"><div class="card" style="margin-bottom:10px"><h2>Events of the Age</h2>${evHTML()}${news()}</div><div class="tabs">${[['build','🏗️ Build'],['market','📈 Market'],['web','🕸️ Rivals & Trade'],['map','🗺️ Map'],['me','📒 Ledger']].map(([k,l])=>`<button class="${tab===k?'on':''}" onclick="tab='${k}';render()">${l}</button>`).join('')}</div>${body}</div>`;tweenPop()}
+async function tpin(){PIN.v=$('#pin').value;try{await db.auth();pinOk=true;err=''}catch(e){err='Wrong PIN';pinOk=false}render()}
 async function tick(){if(!G||G.status==='ended')return;const c=calc(),pr2={...G.prices};
  GL.filter(g=>G.year>=g.u).forEach(g=>{const h=hist(g.id),p=h[h.length-1];pr2[g.id]=[...h,p+(c[g.id].tg-p)*.4].slice(-12).map(v=>+v.toFixed(2))});
- const old=G.prices;G.prices=pr2;const earn={};Object.entries(TM).forEach(([id,t])=>{let e=0;GL.forEach(g=>{const n=(t.b||{})[g.id]||0;if(n)e+=n*prof(g,t,c)*2});earn[id]=e});
- const y=G.year+2;GL.filter(g=>g.u<=y&&!pr2[g.id]).forEach(g=>pr2[g.id]=[g.p]);
- const st=y>=1930?'ended':'playing';G.year=y;G.status=st;
- try{await db.doc('game/state').update({year:y,status:st,prices:pr2});for(const id in earn)await db.doc('teams/'+id).update({earned:Math.round((TM[id].earned||0)+earn[id])})}catch(e){}}
-let cf=0,err='';
-const eb=()=>err?`<div class="card" style="margin-bottom:10px;color:var(--dn)"><b>${esc(err)}</b></div>`:'';
+ G.prices=pr2;const E=econ(c),up={};
+ Object.entries(TM).forEach(([id,t])=>{const e=E[id],net=e.net*2,nc=cash(t)+net;let top=0;if(G.floor&&nc<G.floor)top=G.floor-nc;up[id]={earned:Math.round((t.earned||0)+net+top),lc:{y:G.year,n:Math.round(net),top:Math.round(top)}}});
+ const y=G.year+2;GL.filter(g=>g.u<=y&&!pr2[g.id]).forEach(g=>pr2[g.id]=[g.p]);const st=y>=1930?'ended':'playing';G.year=y;G.status=st;
+ try{await db.doc('game/state').update({year:y,status:st,prices:pr2});for(const id in up)await db.doc('teams/'+id).update(up[id])}catch(e){err='Tick failed: '+e.message}}
 async function newGame(){if(G&&Object.keys(TM).length&&!cf){cf=1;err='Click "New Game" again within 6 seconds to confirm — this deletes all companies.';render();setTimeout(()=>{cf=0;err='';render()},6000);return}
  cf=0;err='';clearInterval(timer);timer=null;
- try{for(const id in TM)await db.doc('teams/'+id).delete();const p={};GL.filter(g=>g.u<=1830).forEach(g=>p[g.id]=[g.p]);await db.doc('game/state').set({year:1830,status:'lobby',prices:p,manual:[]})}catch(e){err='Could not create game: '+(e&&e.message||JSON.stringify(e))}
+ try{for(const id in TM)await db.doc('teams/'+id).delete();const p={};GL.filter(g=>g.u<=1830).forEach(g=>p[g.id]=[g.p]);await db.doc('game/state').set({year:1830,status:'lobby',prices:p,manual:[],floor:0})}catch(e){err='Could not create game: '+(e&&e.message||'error')}
  render()}
 async function startG(){await db.doc('game/state').update({status:'playing'})}
-function auto(){const b=$('#ap');if(timer){clearInterval(timer);timer=null}else timer=setInterval(tick,+$('#spd').value);render()}
-async function shock(i){const s=SHOCK[i];const m=[...(G.manual||[]),{n:s[0],t:s[1],d:s[2],e:s[3],end:G.year+6}];await db.doc('game/state').update({manual:m})}
+function auto(){if(timer){clearInterval(timer);timer=null}else timer=setInterval(tick,+$('#spd').value);render()}
+async function shock(i){const s=SHOCK[i];await db.doc('game/state').update({manual:[...(G.manual||[]),{n:s[0],t:s[1],d:s[2],e:s[3],end:G.year+6}]})}
 async function endShock(i){const m=[...G.manual];m.splice(i,1);await db.doc('game/state').update({manual:m})}
+async function tgive(id,s){const t=TM[id];await db.doc('teams/'+id).update({earned:Math.round((t.earned||0)+s*tamt)})}
+async function tgiveall(s){for(const id in TM)await tgive(id,s)}
+async function tbuild(id,s){const b={...(TM[id].b||{})};b[tg]=Math.max(0,(b[tg]||0)+s);await db.doc('teams/'+id).update({b})}
+async function setFloor(v){await db.doc('game/state').update({floor:Math.max(0,+v||0)})}
 function rTeacher(A){document.body.classList.remove('proj');
  if(!G){A.innerHTML=head('Teacher')+`<div class="wrap">${eb()}<div class="card"><h2>No game yet</h2><p>Create a game, then share this page's web address with your students.</p><button class="pri" onclick="newGame()">Create New Game</button></div></div>`;return}
- const c=calc(),T=rank(),U=GL.filter(g=>G.year>=g.u),running=!!timer,sp=$('#spd')?$('#spd').value:'6000';
+ const c=calc(),E=econ(c),T=rank(),running=!!timer,sp=$('#spd')?$('#spd').value:'6000';
  const ctl=`<button class="pri" onclick="${G.status==='lobby'?'startG()':'tick()'}" ${G.status==='ended'?'disabled':''}>${G.status==='lobby'?'▶ Start Game':'Next 2 Years ⏭'}</button><button id="ap" onclick="auto()" ${G.status==='playing'?'':'disabled'}>${running?'⏸ Pause':'⏵ Auto'}</button><select id="spd"><option value="3000">3s</option><option value="6000">6s</option><option value="12000">12s</option><option value="30000">30s</option></select><button onclick="newGame()">New Game</button>`;
  let p='';
- if(gtab==='teams')p=T.map(r=>`<div class="ev" style="align-items:flex-start">${logo(r.t.l,46)}<div><b>${esc(r.t.name)}</b> <small style="display:inline">${esc(r.t.city)}</small><br>${Object.entries(r.t.b||{}).filter(e=>e[1]).map(([i,n])=>`<span class="chip">${GM[i].i}×${n}</span>`).join('')||'<small>No buildings</small>'}<br><small>🛤️ ${rail(r.t)} · ⚓ ${port(r.t)}</small></div><b class="${r.c>=0?'up':'dn'}">${fm(r.c)}</b></div>`).join('')||'<div style="color:var(--mut)">No companies yet — students found them on their devices.</div>';
- else if(gtab==='events'){const up=EV.filter(e=>e[3]>G.year).slice(0,4);p=`<b>Active</b>${evHTML()}${(G.manual||[]).map((m,i)=>m.end>G.year?`<div style="text-align:right"><button onclick="endShock(${i})">End “${esc(m.n)}”</button></div>`:'').join('')}<p><b>Coming up</b></p>${up.map(e=>`<div class="ev"><span class="tag ${e[1]}">${e[1]}</span><div><b>${e[0]}</b><small>${e[3]}–${e[4]} · ${e[2]}</small></div></div>`).join('')}<p><b>Trigger a shock now</b></p><div>${SHOCK.map((s,i)=>`<button style="margin:2px" onclick="shock(${i})">${s[0]}</button>`).join('')}</div>`}
- else p=`<b>Technology timeline</b>`+GL.filter(g=>g.u>1830).reduce((a,g)=>{(a[g.u]=a[g.u]||[]).push(g);return a},[]).map((l,y)=>l?`<div class="ev"><b>${y}</b><div>${l.map(g=>`<span class="chip" style="${G.year>=y?'':'opacity:.5'}">${g.i} ${g.n}</span>`).join('')}</div></div>`:'').join('')+`<p style="font-size:13px;color:var(--mut)">Prices move toward base × (demand ÷ supply). Factories buy their inputs, so shortages ripple through supply chains. Costs rise with each building owned, the year, and the number of technologies. Population grows 1% a year.</p>`;
- A.innerHTML=head('Teacher Control',ctl)+`<div class="wrap">${eb()}<div class="grid2"><div class="card"><h2>Price Board — ${G.status==='lobby'?'Lobby':G.status==='ended'?'Game Over':'Playing'} · ${T.length} companies</h2>${board(c)}</div><div><div class="card"><div class="tabs">${[['teams','🏭 Companies'],['events','📜 Events'],['econ','⚖️ Economy']].map(([k,l])=>`<button class="${gtab===k?'on':''}" onclick="gtab='${k}';render()">${l}</button>`).join('')}</div>${p}</div></div></div></div>`+(G.status==='ended'?endScreen():'');
- $('#spd').value=sp}
-const PIN={v:''};let pinOk=false;
+ if(gtab==='teams')p=`<div class="card" style="background:var(--chip);margin-bottom:8px;padding:8px"><b>Teacher tools</b><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:6px">£<input type="number" style="width:90px" value="${tamt}" onchange="tamt=+this.value||0"> <select onchange="tg=this.value">${GL.filter(g=>G.year>=g.u).map(g=>`<option value="${g.id}" ${tg===g.id?'selected':''}>${g.n}</option>`).join('')}</select> <button onclick="tgiveall(1)">+£${tamt} to all</button><span>Auto top-up floor £<input type="number" style="width:80px" value="${G.floor||0}" onchange="setFloor(this.value)"></span></div><small>Floor: after every turn, any company below this cash is topped up to it (0 = off).</small></div>`+
+  (T.map(r=>`<div class="ev" style="align-items:flex-start">${logo(r.t.l,46)}<div><b>${esc(r.t.name)}</b> <small style="display:inline">${esc(r.t.city)}</small><br>${chips(r.t)}<br><button onclick="tgive('${r.id}',1)">+£${tamt}</button> <button onclick="tgive('${r.id}',-1)">−£${tamt}</button> <button onclick="tbuild('${r.id}',1)">+ ${GM[tg].n}</button> <button onclick="tbuild('${r.id}',-1)">− ${GM[tg].n}</button></div><div style="text-align:right"><b class="pr">${fm(r.c)}</b><br><small class="${sg(E[r.id].net)}">${sgn(E[r.id].net)}/yr</small></div></div>`).join('')||'<div style="color:var(--mut)">No companies yet — students found them on their devices.</div>');
+ else if(gtab==='events'){const up=EV.filter(e=>e[3]>G.year).slice(0,5);p=`<b>Active</b>${evHTML()}${(G.manual||[]).map((m,i)=>m.end>G.year?`<div style="text-align:right"><button onclick="endShock(${i})">End “${esc(m.n)}”</button></div>`:'').join('')}<p><b>Coming up</b></p>${up.map(e=>`<div class="ev"><span class="tag ${e[1]}">${e[1]}</span><div><b>${e[0]}</b><small>${e[3]}–${e[4]} · ${e[2]}</small></div></div>`).join('')}<p><b>Trigger a shock now</b> <small>(students get a telegram pop-up)</small></p><div>${SHOCK.map((s,i)=>`<button style="margin:2px" onclick="shock(${i})">${s[0]}</button>`).join('')}</div>`}
+ else p=`<b>Ports</b><table><tr><th>Company</th><th>Ports</th><th>Dues paid</th><th>Dues received</th></tr>${T.map(r=>`<tr><td>${esc(r.t.name)}</td><td>${port(r.t)}</td><td class="neg">${fm(E[r.id].pay)}</td><td class="pos">${fm(E[r.id].rec)}</td></tr>`).join('')}</table><small>Dues = ${PORT_RATE*100}% of each company's profit, shared by ports owned (per year).</small><p><b>Technology timeline</b></p>`+GL.filter(g=>g.u>1830).reduce((a,g)=>{(a[g.u]=a[g.u]||[]).push(g);return a},[]).map((l,y)=>l?`<span class="chip" style="${G.year>=y?'':'opacity:.5'}">${y}: ${l.map(g=>g.i+' '+g.n).join(', ')}</span>`:'').join('');
+ A.innerHTML=head('Teacher Control',ctl)+popBand()+`<div class="wrap">${eb()}<div class="grid2"><div class="card"><h2>Price Board — ${G.status==='lobby'?'Lobby':G.status==='ended'?'Game Over':'Playing'} · ${T.length} companies</h2>${board(c)}</div><div><div class="card"><div class="tabs">${[['teams','🏭 Companies'],['events','📜 Events'],['econ','⚖️ Economy']].map(([k,l])=>`<button class="${gtab===k?'on':''}" onclick="gtab='${k}';render()">${l}</button>`).join('')}</div>${p}</div></div></div></div>`+(G.status==='ended'?endScreen():'');
+ $('#spd').value=sp;tweenPop()}
 function mkDb(){let st={game:null,teams:{}},v=0,ready=false,subs=[];
  const apply=j=>{if(j.v===v&&ready)return;v=j.v;if(j.s)st=j.s;ready=true;subs.forEach(f=>f())};
  const api=b=>fetch('api/op',{method:'POST',headers:{'content-type':'application/json','x-pin':PIN.v},body:JSON.stringify(b)}).then(async r=>{const j=await r.json();if(!r.ok)throw new Error(j.error||'Request failed');apply(j);return j});
  const poll=async()=>{try{apply(await (await fetch('api/state?v='+v)).json())}catch(e){}setTimeout(poll,1500)};poll();
  const sub=f=>{subs.push(f);if(ready)f()};
- return{auth:()=>api({op:'auth'}),
-  doc:p=>({set:d=>api({op:'set',path:p,data:d}),update:d=>api({op:'update',path:p,data:d}),delete:()=>api({op:'delete',path:p}),
-   onSnapshot:f=>sub(()=>{const x=st.game;f({exists:!!x,data:()=>x})})}),
-  collection:p=>({onSnapshot:f=>sub(()=>f({docs:Object.entries(st.teams).map(([id,d])=>({id,data:()=>d}))}))})}}
-async function tpin(){PIN.v=$('#pin').value;try{await db.auth();pinOk=true;err=''}catch(e){err='Wrong PIN';pinOk=false}render()}
-(()=>{db=mkDb();db.doc('game/state').onSnapshot(s=>{G=s.exists?s.data():null;rq()});db.collection('teams').onSnapshot(s=>{TM={};s.docs.forEach(d=>TM[d.id]=d.data());loaded=true;rq()});render()})();
+ return{auth:()=>api({op:'auth'}),doc:p=>({set:d=>api({op:'set',path:p,data:d}),update:d=>api({op:'update',path:p,data:d}),delete:()=>api({op:'delete',path:p}),onSnapshot:f=>sub(()=>{const x=st.game;f({exists:!!x,data:()=>x})})}),collection:p=>({onSnapshot:f=>sub(()=>f({docs:Object.entries(st.teams).map(([id,d])=>({id,data:()=>d}))}))})}}
+(()=>{db=mkDb();
+ db.doc('game/state').onSnapshot(s=>{const o=G;G=s.exists?s.data():null;if(!G||(o&&G.year<o.year)||G.status==='lobby')seen=null;chkEv();rq()});
+ db.collection('teams').onSnapshot(s=>{TM={};s.docs.forEach(d=>TM[d.id]=d.data());loaded=true;rq()});
+ if(window.twemoji){let q=0;const run=()=>['#app','#pop','#toast'].forEach(s=>{const n=$(s);if(n)twemoji.parse(n,{folder:'svg',ext:'.svg',className:'emoji'})});new MutationObserver(()=>{if(!q)q=requestAnimationFrame(()=>{q=0;run()})}).observe(document.body,{childList:true,subtree:true})}
+ render()})();
 </script></body></html>

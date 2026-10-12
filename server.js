@@ -20,8 +20,8 @@ http.createServer((req,res)=>{
    else if(col==='teams'&&id){const cur=S.teams[id];
     if(o.op==='delete'){if(!teacher)return send(403,{error:'Teacher only'});delete S.teams[id]}
     else if(o.op==='set'){if(cur&&!teacher)return send(403,{error:'Exists'});if(!cur&&Object.keys(S.teams).length>=200)return send(400,{error:'Game full'});
-     const d=o.data;if(!teacher){d.earned=0;d.spent=0}S.teams[id]=d}
-    else if(o.op==='update'){if(!cur)return send(404,{error:'No such company'});const d={...o.data};if(!teacher)delete d.earned;S.teams[id]={...cur,...d}}
+     const d=o.data;if(!teacher){d.earned=0;d.spent=0;delete d.lc}S.teams[id]=d}
+    else if(o.op==='update'){if(!cur)return send(404,{error:'No such company'});const d={...o.data};if(!teacher){delete d.earned;delete d.lc}S.teams[id]={...cur,...d}}
     else return send(400,{error:'bad op'})}
    else return send(400,{error:'bad path'});
    v++;save();send(200,{v,s:S});
