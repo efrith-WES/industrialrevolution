@@ -5,7 +5,7 @@ const PORT=process.env.PORT||3000,PIN=process.env.TEACHER_PIN||'1234',F=path.joi
 let S={game:null,teams:{}},v=1;
 try{S=JSON.parse(fs.readFileSync(F,'utf8'))}catch(e){}
 let t0;const save=()=>{clearTimeout(t0);t0=setTimeout(()=>fs.writeFile(F,JSON.stringify(S),()=>{}),500)};
-const page=fs.readFileSync(path.join(__dirname,'index.html'));
+const crypto=require('crypto'),readPage=()=>fs.readFileSync(path.join(__dirname,'index.html'));
 http.createServer((req,res)=>{
  const u=new URL(req.url,'http://x');
  const send=(c,o)=>{res.writeHead(c,{'content-type':'application/json','cache-control':'no-store'});res.end(JSON.stringify(o))};
@@ -26,5 +26,6 @@ http.createServer((req,res)=>{
    else return send(400,{error:'bad path'});
    v++;save();send(200,{v,s:S});
   }catch(e){send(400,{error:e.message})}});return}
- res.writeHead(200,{'content-type':'text/html; charset=utf-8'});res.end(page);
+ if(u.pathname==='/version'){const p=readPage();return send(200,{build:(p.toString().match(/BUILD:([\w.-]+)/)||[])[1]||'unknown (old index.html!)',bytes:p.length,hash:crypto.createHash('md5').update(p).digest('hex').slice(0,8)})}
+ res.writeHead(200,{'content-type':'text/html; charset=utf-8','cache-control':'no-store'});res.end(readPage());
 }).listen(PORT,()=>console.log('Marketplace running on http://localhost:'+PORT+'  Teacher PIN: '+PIN+(PIN==='1234'?'  (default! set TEACHER_PIN)':'')));
